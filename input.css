@@ -39,3 +39,53 @@
     }
 }
 
+/* Hamburger Menu */
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative; /* To be able to position the spans in it absolute */
+}
+
+/* Hamburger Menu - three lines */
+.hamburger-top,         /* <span class="hamburger-top"></span> */
+.hamburger-middle,      /* <span class="hamburger-middle"></span> */
+.hamburger-bottom {
+    /* <span class="hamburger-bottom"></span> */
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transform: rotate(
+        0
+    ); /* At the beginning all three lines are positioned at the same place */
+    transition: all 0.5s;
+}
+
+.hamburger-middle {
+    transform: translateY(7px); /* To change the position of the middle line */
+}
+
+.hamburger-bottom {
+    transform: translateY(14px); /* To change the position of the bottom line */
+}
+
+.open {
+    /* This class will be added due to JS to the <button> tag */
+    transform: rotate(90deg); /* To rotate all three lines by 90 deg */
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px); /* To bring the top line into the X-position */
+}
+
+.open .hamburger-middle {
+    display: none; /* To hide the middle line when the three lines comes to an x */
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px); /* To bring the bottom line into the X-position */
+}
